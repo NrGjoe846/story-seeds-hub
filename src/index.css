@@ -118,4 +118,36 @@ All colors MUST be HSL.
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_-4px_hsl(0_82%_63%/0.12)];
   }
+  
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+  
+  .glass-card {
+    @apply bg-background/60 backdrop-blur-xl border border-border/50;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 3s infinite linear;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(0 82% 63% / 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
 }
