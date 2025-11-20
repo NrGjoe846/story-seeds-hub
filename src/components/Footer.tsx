@@ -1,5 +1,5 @@
+import { Sparkles, Facebook, Instagram, Youtube, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Sparkles, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,74 +11,122 @@ const Footer = () => {
               <Sparkles className="h-6 w-6" />
               <span className="text-xl font-heading font-bold">Story Seeds</span>
             </div>
-            <p className="text-sm text-primary-foreground/80">
-              Empowering young voices through the art of storytelling.
+            <p className="text-sm opacity-90">
+              Nurturing young storytellers across India. Building confidence, creativity, and communication skills through the magic of storytelling.
             </p>
+            <div className="flex gap-4">
+              <a href="#" className="hover:opacity-80 transition-opacity hover:scale-110 transition-transform">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="#" className="hover:opacity-80 transition-opacity hover:scale-110 transition-transform">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" className="hover:opacity-80 transition-opacity hover:scale-110 transition-transform">
+                <Youtube className="h-5 w-5" />
+              </a>
+              <a href="#" className="hover:opacity-80 transition-opacity hover:scale-110 transition-transform">
+                <Twitter className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-heading font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="hover:underline text-primary-foreground/80 hover:text-primary-foreground">
+                <Link to="/" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:underline text-primary-foreground/80 hover:text-primary-foreground">
+                <Link to="/about" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/gallery" className="hover:underline text-primary-foreground/80 hover:text-primary-foreground">
+                <Link to="/competitions" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
+                  Competitions
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link to="/voting" className="hover:underline text-primary-foreground/80 hover:text-primary-foreground">
+                <Link to="/voting" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
                   Voting
                 </Link>
               </li>
+              <li>
+                <Link to="/faq" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold mb-4">Get Started</h3>
+            <h3 className="font-heading font-bold mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/register" className="hover:underline text-primary-foreground/80 hover:text-primary-foreground">
-                  Register
+                <Link to="/register" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
+                  Register Now
                 </Link>
               </li>
               <li>
-                <Link to="/login" className="hover:underline text-primary-foreground/80 hover:text-primary-foreground">
-                  Login
-                </Link>
+                <a href="#" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
+                  Storytelling Tips
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
+                  Video Guidelines
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
+                  Privacy Policy
+                </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold mb-4">Contact</h3>
+            <h3 className="font-heading font-bold mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2 text-primary-foreground/80">
+              <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>contact@storyseeds.in</span>
+                <a href="mailto:hello@storyseeds.in" className="hover:opacity-80 transition-opacity">
+                  hello@storyseeds.in
+                </a>
               </li>
-              <li className="flex items-center gap-2 text-primary-foreground/80">
+              <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+91 98765 43210</span>
+                <a href="tel:+919876543210" className="hover:opacity-80 transition-opacity">
+                  +91 9876543210
+                </a>
               </li>
-              <li className="flex items-center gap-2 text-primary-foreground/80">
-                <MapPin className="h-4 w-4" />
-                <span>Mumbai, India</span>
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
+                <span className="opacity-90">
+                  123 Story Lane<br />
+                  Bangalore, Karnataka 560001
+                </span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/80">
-          <p>© {new Date().getFullYear()} Story Seeds. All rights reserved.</p>
+        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
+          <p className="text-sm opacity-90">
+            &copy; 2024 Story Seeds. All rights reserved. Made with ❤️ for young storytellers.
+          </p>
         </div>
       </div>
     </footer>
