@@ -8,82 +8,88 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Story Seed Studio Official Theme */
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 0 82% 63%;
+    --primary: 356 92% 47%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 0 100% 97%;
-    --accent-foreground: 0 82% 63%;
+    --accent: 356 92% 47%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 356 92% 47%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 0 82% 63%;
+    --ring: 356 92% 47%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Story Seeds Custom Colors */
-    --brand-red: 0 82% 63%;
-    --brand-red-light: 0 100% 97%;
-    --charcoal: 0 0% 10%;
-    --soft-grey: 0 0% 95%;
+    /* Story Seed Studio Brand Colors */
+    --brand-red: 356 92% 47%;
+    --brand-yellow: 45 90% 57%;
+    --brand-black: 0 0% 0%;
+    --brand-white: 0 0% 100%;
+    
+    /* Semantic Usage */
+    --charcoal: 0 0% 0%;
+    --soft-grey: 0 0% 97%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 100% 97%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 99%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(356 92% 47%) 0%, hsl(356 92% 40%) 100%);
     
-    /* Shadows */
-    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.05);
-    --shadow-card-hover: 0 8px 24px -4px hsl(0 82% 63% / 0.12);
+    /* Shadows - High Contrast */
+    --shadow-card: 0 4px 16px -4px hsl(0 0% 0% / 0.1);
+    --shadow-card-hover: 0 12px 32px -8px hsl(356 92% 47% / 0.25);
+    --shadow-intense: 0 8px 24px -4px hsl(0 0% 0% / 0.15);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 0 82% 63%;
+    --primary: 356 92% 47%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 82% 63%;
+    --accent: 356 92% 47%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 356 92% 47%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 0 82% 63%;
+    --ring: 356 92% 47%;
   }
 }
 
@@ -116,7 +122,19 @@ All colors MUST be HSL.
   }
   
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_-4px_hsl(0_82%_63%/0.12)];
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_32px_-8px_hsl(356_92%_47%/0.25)];
+  }
+  
+  .card-premium {
+    @apply bg-card border-2 border-border rounded-2xl shadow-[0_4px_16px_-4px_hsl(0_0%_0%/0.1)] transition-all;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-bold rounded-full px-8 py-3 transition-all hover:scale-105 hover:shadow-[0_8px_24px_-4px_hsl(356_92%_47%/0.4)];
+  }
+  
+  .accent-divider {
+    @apply h-1 bg-gradient-to-r from-transparent via-primary to-transparent my-12;
   }
   
   .section-padding {
@@ -145,9 +163,17 @@ All colors MUST be HSL.
     background: linear-gradient(
       90deg,
       transparent 0%,
-      hsl(0 82% 63% / 0.1) 50%,
+      hsl(356 92% 47% / 0.15) 50%,
       transparent 100%
     );
     background-size: 1000px 100%;
+  }
+  
+  .leaf-accent {
+    @apply inline-block w-6 h-6 text-primary;
+  }
+  
+  .badge-yellow {
+    @apply inline-flex items-center px-3 py-1 rounded-full bg-[hsl(45_90%_57%)] text-black font-bold text-xs;
   }
 }

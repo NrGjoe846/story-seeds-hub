@@ -30,44 +30,44 @@ const CompetitionCard = ({
   };
 
   return (
-    <Card className="overflow-hidden hover-lift border-2 border-border group">
-      <div className="relative h-48 overflow-hidden">
+    <Card className="overflow-hidden card-premium hover-lift group bg-background">
+      <div className="relative h-56 overflow-hidden">
         <img
           src={image}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <Badge
-          className={`absolute top-4 right-4 ${statusColors[status]} text-white`}
+          className={`absolute top-4 right-4 ${statusColors[status]} text-white font-bold px-4 py-2 text-sm rounded-full shadow-lg`}
         >
           {status.charAt(0).toUpperCase() + status.slice(1)}
         </Badge>
       </div>
-      <CardContent className="p-6 space-y-4">
-        <h3 className="text-xl font-heading font-bold text-foreground">
+      <CardContent className="p-8 space-y-6">
+        <h3 className="text-2xl font-heading font-extrabold text-foreground">
           {title}
         </h3>
-        <p className="text-muted-foreground text-sm line-clamp-2">
+        <p className="text-muted-foreground text-base line-clamp-2 leading-relaxed">
           {description}
         </p>
 
-        <div className="space-y-2 text-sm">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Calendar className="h-4 w-4 text-primary" />
-            <span>Deadline: {deadline}</span>
+        <div className="space-y-3 text-base">
+          <div className="flex items-center gap-3 text-foreground font-medium">
+            <Calendar className="h-5 w-5 text-primary" strokeWidth={2.5} />
+            <span>Deadline: <strong>{deadline}</strong></span>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Users className="h-4 w-4 text-primary" />
-            <span>{participants} Participants</span>
+          <div className="flex items-center gap-3 text-foreground font-medium">
+            <Users className="h-5 w-5 text-primary" strokeWidth={2.5} />
+            <span><strong>{participants}</strong> Participants</span>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Trophy className="h-4 w-4 text-primary" />
+          <div className="flex items-center gap-3 text-foreground font-medium">
+            <Trophy className="h-5 w-5 text-brand-yellow" strokeWidth={2.5} />
             <span>{prize}</span>
           </div>
         </div>
 
-        <Link to="/register" className="block">
-          <Button className="w-full bg-primary hover:bg-primary/90">
+        <Link to="/register" className="block pt-2">
+          <Button className="w-full btn-primary h-12 text-base">
             Participate Now
           </Button>
         </Link>

@@ -40,30 +40,30 @@ const benefits = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-24 bg-soft-grey">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            Why Choose <span className="text-primary">Story Seeds</span>
+          <h2 className="text-5xl md:text-6xl font-heading font-extrabold mb-6 text-foreground">
+            Why Choose <span className="text-primary">Story Seed Studio</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
             We're committed to nurturing the next generation of storytellers
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-6 border-2 border-border hover:border-primary transition-all hover-lift group"
+              className="card-premium p-8 hover:border-primary hover-lift group bg-background"
             >
-              <div className="w-12 h-12 rounded-lg bg-brand-red-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <benefit.icon className="h-6 w-6 text-primary" />
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                <benefit.icon className="h-8 w-8 text-primary-foreground" strokeWidth={2.5} />
               </div>
-              <h3 className="text-lg font-heading font-semibold mb-2">
+              <h3 className="text-xl font-heading font-extrabold mb-3 text-foreground">
                 {benefit.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 {benefit.description}
               </p>
             </div>

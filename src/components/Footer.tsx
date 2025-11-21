@@ -3,38 +3,38 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-charcoal text-background border-t-4 border-primary">
+      <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-4 gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Sparkles className="h-6 w-6" />
-              <span className="text-xl font-heading font-bold">Story Seeds</span>
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <Sparkles className="h-8 w-8 text-primary" />
+              <span className="text-2xl font-heading font-extrabold">Story Seed Studio</span>
             </div>
-            <p className="text-sm opacity-90">
+            <p className="text-base leading-relaxed max-w-xs">
               Nurturing young storytellers across India. Building confidence, creativity, and communication skills through the magic of storytelling.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="hover:opacity-80 transition-opacity hover:scale-110 transition-transform">
-                <Facebook className="h-5 w-5" />
+              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110">
+                <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity hover:scale-110 transition-transform">
-                <Instagram className="h-5 w-5" />
+              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110">
+                <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity hover:scale-110 transition-transform">
-                <Youtube className="h-5 w-5" />
+              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110">
+                <Youtube className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity hover:scale-110 transition-transform">
-                <Twitter className="h-5 w-5" />
+              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110">
+                <Twitter className="h-6 w-6" />
               </a>
             </div>
           </div>
 
           <div>
-            <h3 className="font-heading font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-heading font-extrabold mb-6 text-lg">Quick Links</h3>
+            <ul className="space-y-3 text-base">
               <li>
-                <Link to="/" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
+                <Link to="/" className="hover:text-primary transition-colors hover:translate-x-2 inline-block transition-transform font-medium">
                   Home
                 </Link>
               </li>
@@ -67,7 +67,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-heading font-bold mb-4">Resources</h3>
+            <h3 className="font-heading font-extrabold mb-6 text-lg">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/register" className="hover:opacity-80 transition-opacity hover:translate-x-1 inline-block transition-transform">
@@ -98,7 +98,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-heading font-bold mb-4">Contact Us</h3>
+            <h3 className="font-heading font-extrabold mb-6 text-lg">Contact Us</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
@@ -123,9 +123,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p className="text-sm opacity-90">
-            &copy; 2024 Story Seeds. All rights reserved. Made with ❤️ for young storytellers.
+        <div className="border-t-2 border-primary/20 mt-12 pt-8 text-center">
+          <p className="text-base font-medium">
+            &copy; 2024 Story Seed Studio. All rights reserved. Made with <span className="text-primary">❤️</span> for young storytellers.
           </p>
         </div>
       </div>

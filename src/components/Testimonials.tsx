@@ -27,14 +27,15 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="section-padding bg-soft-grey">
+    <section className="section-padding bg-background">
       <div className="container mx-auto px-4">
+        <div className="accent-divider mb-16" />
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <h2 className="text-5xl md:text-6xl font-heading font-extrabold mb-6 text-foreground">
             What <span className="text-primary">Parents Say</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Hear from families who've experienced the magic of Story Seeds
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
+            Hear from families who've experienced the magic of Story Seed Studio
           </p>
         </div>
 
@@ -42,31 +43,31 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="hover-lift border-2 border-border bg-background"
+              className="card-premium hover-lift bg-background group"
             >
-              <CardContent className="p-6 space-y-4">
+              <CardContent className="p-8 space-y-6">
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="h-5 w-5 fill-primary text-primary"
+                      className="h-6 w-6 fill-brand-yellow text-brand-yellow"
                     />
                   ))}
                 </div>
-                <p className="text-muted-foreground italic">
+                <p className="text-foreground text-base leading-relaxed font-medium">
                   "{testimonial.content}"
                 </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-border">
+                <div className="flex items-center gap-4 pt-4 border-t-2 border-border">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-primary"
+                    className="w-14 h-14 rounded-full object-cover border-2 border-primary shadow-lg"
                   />
                   <div>
-                    <p className="font-semibold text-foreground">
+                    <p className="font-bold text-foreground text-base">
                       {testimonial.name}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground font-medium">
                       {testimonial.role}
                     </p>
                   </div>
@@ -75,6 +76,7 @@ const Testimonials = () => {
             </Card>
           ))}
         </div>
+        <div className="accent-divider mt-16" />
       </div>
     </section>
   );
