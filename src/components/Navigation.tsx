@@ -7,20 +7,20 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-xl border-b-2 border-primary shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 group">
-            <Sparkles className="h-6 w-6 text-primary transition-transform group-hover:scale-110 group-hover:rotate-12" />
-            <span className="text-xl font-heading font-bold text-foreground">
-              Story Seeds
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center gap-3 group">
+            <Sparkles className="h-8 w-8 text-primary transition-transform group-hover:scale-110 group-hover:rotate-12" />
+            <span className="text-2xl font-heading font-extrabold text-foreground tracking-tight">
+              Story Seed Studio
             </span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
             <Link
               to="/"
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              className="text-sm font-bold text-foreground hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full uppercase tracking-wide"
             >
               Home
             </Link>
@@ -64,12 +64,12 @@ const Navigation = () => {
 
           <div className="hidden lg:flex items-center gap-3">
             <Link to="/login">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="font-bold">
                 Login
               </Button>
             </Link>
             <Link to="/register">
-              <Button size="sm" className="bg-primary hover:bg-primary/90">
+              <Button size="sm" className="btn-primary h-10">
                 Register Now
               </Button>
             </Link>

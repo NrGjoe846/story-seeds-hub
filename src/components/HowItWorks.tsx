@@ -20,48 +20,50 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-20 bg-soft-grey">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
+        <div className="accent-divider mb-16" />
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <h2 className="text-5xl md:text-6xl font-heading font-extrabold mb-6 text-foreground">
             How It <span className="text-primary">Works</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
             Three simple steps to share your story with the world
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           {/* Timeline line */}
-          <div className="hidden md:block absolute top-12 left-0 right-0 h-1 bg-primary/20">
-            <div className="h-full bg-primary w-0 animate-[width_2s_ease-in-out]" style={{animationFillMode: "forwards"}} />
+          <div className="hidden md:block absolute top-16 left-0 right-0 h-2 bg-border rounded-full">
+            <div className="h-full bg-gradient-to-r from-primary to-brand-yellow w-0 animate-[width_2s_ease-in-out] rounded-full" style={{animationFillMode: "forwards"}} />
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="bg-card rounded-2xl p-8 border-2 border-border hover:border-primary transition-all hover-lift"
+                className="card-premium p-10 hover:border-primary hover-lift bg-background group"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                    <step.icon className="h-8 w-8 text-primary" />
+                <div className="relative mb-8">
+                  <div className="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center mx-auto shadow-[0_8px_24px_-4px_hsl(356_92%_47%/0.4)] group-hover:scale-110 transition-transform">
+                    <step.icon className="h-10 w-10 text-primary-foreground" strokeWidth={2.5} />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
+                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-brand-yellow text-black flex items-center justify-center text-lg font-extrabold shadow-lg">
                     {index + 1}
                   </div>
                 </div>
-                <h3 className="text-xl font-heading font-semibold mb-3 text-center">
+                <h3 className="text-2xl font-heading font-extrabold mb-4 text-center text-foreground">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground text-center">
+                <p className="text-muted-foreground text-center text-base leading-relaxed">
                   {step.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
+        <div className="accent-divider mt-16" />
       </div>
     </section>
   );
