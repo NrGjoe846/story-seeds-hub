@@ -12,6 +12,7 @@ interface CompetitionCardProps {
   prize: string;
   status: "active" | "upcoming" | "ended";
   image: string;
+  competitionId?: string;
 }
 
 const CompetitionCard = ({
@@ -22,6 +23,7 @@ const CompetitionCard = ({
   prize,
   status,
   image,
+  competitionId = 'winter-tales',
 }: CompetitionCardProps) => {
   const statusColors = {
     active: "bg-green-500",
@@ -66,11 +68,18 @@ const CompetitionCard = ({
           </div>
         </div>
 
-        <Link to="/register" className="block pt-2">
-          <Button className="w-full btn-primary h-12 text-base">
-            Participate Now
-          </Button>
-        </Link>
+        <div className="flex gap-2 pt-2">
+          <Link to={`/competition/${competitionId}`} className="flex-1">
+            <Button variant="outline" className="w-full h-12 text-base">
+              View Details
+            </Button>
+          </Link>
+          <Link to="/upload" className="flex-1">
+            <Button className="w-full btn-primary h-12 text-base">
+              Participate
+            </Button>
+          </Link>
+        </div>
       </CardContent>
     </Card>
   );
