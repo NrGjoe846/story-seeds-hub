@@ -6,9 +6,13 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Register = () => {
+  const { register } = useAuth();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     parentName: "",
     childName: "",
@@ -18,14 +22,24 @@ const Register = () => {
     competition: "",
     terms: false,
   });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.terms) {
       toast.error("Please accept the terms and conditions");
       return;
     }
-    toast.success("Registration successful! Your story seed has been planted.");
+    setIsLoading(true);
+    try {
+      await register(formData);
+      toast.success("Registration successful! Your story seed has been planted.");
+      setTimeout(() => navigate('/profile'), 1500);
+    } catch (error) {
+      toast.error("Registration failed. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -140,8 +154,8 @@ const Register = () => {
                   </label>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
-                  Complete Registration
+                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90" disabled={isLoading}>
+                  {isLoading ? 'Registering...' : 'Complete Registration'}
                 </Button>
               </form>
             </div>
