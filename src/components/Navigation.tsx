@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Sparkles, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,10 +12,11 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <Sparkles className="h-8 w-8 text-primary transition-transform group-hover:scale-110 group-hover:rotate-12" />
-            <span className="text-2xl font-heading font-extrabold text-foreground tracking-tight">
-              Story Seed Studio
-            </span>
+            <img 
+              src={logo} 
+              alt="Story Seed Studio" 
+              className="h-12 w-auto transition-transform group-hover:scale-105"
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
