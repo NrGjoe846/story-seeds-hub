@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Voting from "./pages/Voting";
+import Leaderboard from "./pages/Leaderboard";
 import Competitions from "./pages/Competitions";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/voting" element={<Voting />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/competitions" element={<Competitions />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
