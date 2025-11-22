@@ -51,6 +51,12 @@ const Navigation = () => {
               Voting
             </Link>
             <Link
+              to="/leaderboard"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+            >
+              Leaderboard
+            </Link>
+            <Link
               to="/faq"
               className="text-sm font-medium text-foreground hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
             >
@@ -127,6 +133,13 @@ const Navigation = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Voting
+              </Link>
+              <Link
+                to="/leaderboard"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Leaderboard
               </Link>
               <Link
                 to="/faq"
