@@ -4,13 +4,29 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Login = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Login successful!");
+    setIsLoading(true);
+    try {
+      await login(formData.email, formData.password);
+      toast.success("Login successful!");
+      setTimeout(() => navigate('/profile'), 1000);
+    } catch (error) {
+      toast.error("Login failed. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -36,6 +52,8 @@ const Login = () => {
                   required
                   placeholder="your@email.com"
                   className="border-input focus:border-primary"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
               </div>
 
@@ -47,11 +65,13 @@ const Login = () => {
                   required
                   placeholder="••••••••"
                   className="border-input focus:border-primary"
+                  value={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
-                Login
+              <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90" disabled={isLoading}>
+                {isLoading ? 'Logging in...' : 'Login'}
               </Button>
             </form>
 
