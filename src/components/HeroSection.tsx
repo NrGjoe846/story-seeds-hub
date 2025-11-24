@@ -18,24 +18,24 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link to="/register">
-                <Button size="lg" className="btn-primary text-lg h-14 shadow-[0_4px_16px_-4px_hsl(356_92%_47%/0.4)]">
+                <Button size="lg" className="btn-primary text-lg h-14 shadow-[0_4px_16px_-4px_hsl(356_92%_47%/0.4)] hover:shadow-[0_8px_24px_-4px_hsl(356_92%_47%/0.6)] animate-bounce">
                   Register Now
                 </Button>
               </Link>
               <Link to="/gallery">
-                <Button size="lg" variant="outline" className="text-lg h-14 px-8 border-2 border-foreground text-foreground hover:bg-foreground hover:text-background font-bold rounded-full transition-all hover:scale-105">
+                <Button size="lg" variant="outline" className="text-lg h-14 px-8 border-2 border-foreground text-foreground hover:bg-foreground hover:text-background font-bold rounded-full transition-all hover:scale-110 hover-3d">
                   View Competitions
                 </Button>
               </Link>
             </div>
           </div>
 
-          <div className="relative animate-float">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-brand-yellow/20 rounded-3xl blur-2xl"></div>
+          <div className="relative animate-float float-3d">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-brand-yellow/20 rounded-3xl blur-2xl animate-pulse"></div>
             <img
               src={heroIllustration}
               alt="Story Seeds - Book transforming into stars"
-              className="relative w-full h-auto drop-shadow-2xl"
+              className="relative w-full h-auto drop-shadow-2xl glow-hover"
             />
           </div>
         </div>
