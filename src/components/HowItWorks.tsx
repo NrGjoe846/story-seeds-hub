@@ -42,18 +42,18 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="card-premium p-10 hover:border-primary hover-lift bg-background group"
+                className="card-premium p-10 hover:border-primary hover-lift bg-background group card-3d animate-scale-in"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="relative mb-8">
-                  <div className="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center mx-auto shadow-[0_8px_24px_-4px_hsl(356_92%_47%/0.4)] group-hover:scale-110 transition-transform">
+                  <div className="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center mx-auto shadow-[0_8px_24px_-4px_hsl(356_92%_47%/0.4)] group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <step.icon className="h-10 w-10 text-primary-foreground" strokeWidth={2.5} />
                   </div>
-                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-brand-yellow text-black flex items-center justify-center text-lg font-extrabold shadow-lg">
+                  <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-brand-yellow text-black flex items-center justify-center text-lg font-extrabold shadow-lg animate-bounce">
                     {index + 1}
                   </div>
                 </div>
-                <h3 className="text-2xl font-heading font-extrabold mb-4 text-center text-foreground">
+                <h3 className="text-2xl font-heading font-extrabold mb-4 text-center text-foreground group-hover:text-primary transition-colors">
                   {step.title}
                 </h3>
                 <p className="text-muted-foreground text-center text-base leading-relaxed">

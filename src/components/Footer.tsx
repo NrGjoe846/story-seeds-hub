@@ -15,16 +15,16 @@ const Footer = () => {
               Nurturing young storytellers across India. Building confidence, creativity, and communication skills through the magic of storytelling.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110">
+              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110 hover-3d glow-hover" aria-label="Facebook">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110">
+              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110 hover-3d glow-hover" aria-label="Instagram">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110">
+              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110 hover-3d glow-hover" aria-label="YouTube">
                 <Youtube className="h-6 w-6" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110">
+              <a href="#" className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center transition-all hover:scale-110 hover-3d glow-hover" aria-label="Twitter">
                 <Twitter className="h-6 w-6" />
               </a>
             </div>
@@ -124,8 +124,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t-2 border-primary/20 mt-12 pt-8 text-center">
-          <p className="text-base font-medium">
-            &copy; 2024 Story Seed Studio. All rights reserved. Made with <span className="text-primary">❤️</span> for young storytellers.
+          <p className="text-base font-medium animate-fade-in">
+            &copy; 2025 Story Seed Studio. All rights reserved. Made with <span className="text-primary animate-pulse">❤️</span> for young storytellers.
           </p>
         </div>
       </div>

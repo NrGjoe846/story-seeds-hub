@@ -1,10 +1,11 @@
 import { Users, Video, Trophy, Star } from "lucide-react";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const stats = [
-  { icon: Users, value: "10,000+", label: "Young Storytellers" },
-  { icon: Video, value: "25,000+", label: "Stories Shared" },
-  { icon: Trophy, value: "500+", label: "Winners Celebrated" },
-  { icon: Star, value: "4.9/5", label: "Parent Rating" },
+  { icon: Users, value: 10000, label: "Young Storytellers", suffix: "+" },
+  { icon: Video, value: 25000, label: "Stories Shared", suffix: "+" },
+  { icon: Trophy, value: 500, label: "Winners Celebrated", suffix: "+" },
+  { icon: Star, value: 4.9, label: "Parent Rating", suffix: "/5" },
 ];
 
 const Stats = () => {
@@ -14,10 +15,10 @@ const Stats = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center space-y-4 animate-fade-in group" style={{ animationDelay: `${index * 100}ms` }}>
-              <stat.icon className="h-12 w-12 mx-auto mb-4 group-hover:scale-125 transition-transform" strokeWidth={2.5} />
+            <div key={index} className="text-center space-y-4 animate-fade-in group hover-3d" style={{ animationDelay: `${index * 100}ms` }}>
+              <stat.icon className="h-12 w-12 mx-auto mb-4 group-hover:scale-125 group-hover:animate-bounce transition-transform" strokeWidth={2.5} />
               <div className="text-5xl md:text-6xl font-heading font-extrabold tracking-tight">
-                {stat.value}
+                <AnimatedCounter end={stat.value} suffix={stat.suffix} duration={2500} />
               </div>
               <div className="text-base md:text-lg font-bold uppercase tracking-wider">
                 {stat.label}

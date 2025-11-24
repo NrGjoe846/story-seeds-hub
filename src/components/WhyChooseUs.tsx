@@ -55,12 +55,13 @@ const WhyChooseUs = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="card-premium p-8 hover:border-primary hover-lift group bg-background"
+              className="card-premium p-8 hover:border-primary hover-lift group bg-background card-3d animate-slide-in"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg glow-hover">
                 <benefit.icon className="h-8 w-8 text-primary-foreground" strokeWidth={2.5} />
               </div>
-              <h3 className="text-xl font-heading font-extrabold mb-3 text-foreground">
+              <h3 className="text-xl font-heading font-extrabold mb-3 text-foreground group-hover:text-primary transition-colors">
                 {benefit.title}
               </h3>
               <p className="text-base text-muted-foreground leading-relaxed">

@@ -32,7 +32,7 @@ const Navigation = () => {
             <img 
               src={logo} 
               alt="Story Seed Studio" 
-              className="h-12 w-auto transition-transform group-hover:scale-105"
+              className="h-16 w-auto transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]"
             />
           </Link>
 
